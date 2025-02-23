@@ -17,3 +17,11 @@ class Task(models.Model):
     title = models.CharField(max_length=100)
     due_date = models.DateField()
     completed = models.BooleanField(default=False)
+    is_recurring = models.BooleanField(default=False)
+    recurrence_interval = models.CharField(max_length=20, blank=True, null=True)  # e.g., "quarterly"
+
+class Task(models.Model):
+    ...
+    is_recurring = models.BooleanField(default=False)
+    recurrence_interval = models.CharField(max_length=20, blank=True, null=True)
+
